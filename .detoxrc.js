@@ -13,7 +13,7 @@ module.exports = {
     
     'ios.debug': {
       type: 'ios.app',
-      binaryPath: '/Users/goranmaksimovic/Downloads/Payload/TurboTenant.app',
+      binaryPath: '/Users/goranmaksimovic/Downloads/Payload/TurboTenant-staging.app',
       build: 'xcodebuild -workspace ios/YOUR_APP.xcworkspace -scheme YOUR_APP -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build'
     },
     'ios.release': {
@@ -24,10 +24,10 @@ module.exports = {
     'android.debug': {
       type: 'android.apk',
       binaryPath: '/Users/goranmaksimovic/Downloads/Payload/turbo.apk',
-      build: './gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug',
-      reversePorts: [
-        8081
-      ]
+        build: './gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug'
+      // reversePorts: [
+      //   8081
+      // ]
     },
     'android.release': {
       type: 'android.apk',

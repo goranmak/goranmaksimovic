@@ -13,18 +13,20 @@ describe('Example', () => {
   
 
   it('should start on Landlord signup flow', async () => {
-    await element(by.label("I'm a Landlord")).tap();
+    await element(by.label("Landlord Log In")).tap();
 
   });
 
-  it('should go to regular signup flow', async () => {
-    await element(by.label("Sign Up with Email")).tap();
-  });
+  // it('should go to regular signup flow', async () => {
+  //   await element(by.label("Sign Up with Email")).tap();
+  // });
 
   it('should fill email and password', async () => {    
     await element(by.id('email-input')).typeText('test@example.com');
-    await waitFor(element(by.id('password-input'))).toBeVisible();
-    await element(by.id('password-input').typeText('password'));
+    await element(by.id('email-input')).tapReturnKey();
+    await element(by.id('password-input')).tap();
+    await element(by.id('password-input')).typeText('password');
+    await element(by.id('password-input')).tapReturnKey();
     await element(by.label("Continue")).tap();
   });
 
